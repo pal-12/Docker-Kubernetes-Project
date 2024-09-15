@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notesapi-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: notesapi
+  template:
+    metadata:
+      labels:
+        app: notesapi
+    spec:
+      containers:
+      - name: notesapi-container
+        image: palak1410/spring-boot-docker
+        ports:
+        - containerPort: 8991
