@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: notesapi-deployment
+  name: hello-java-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: notesapi
+      app: hello-java
   template:
     metadata:
       labels:
-        app: notesapi
+        app: hello-java
     spec:
       containers:
-      - name: notesapi-container
+      - name: hello-java
         image: palak1410/spring-boot-docker
         ports:
         - containerPort: 8991
